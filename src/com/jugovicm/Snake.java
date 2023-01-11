@@ -68,6 +68,20 @@ public class Snake extends JPanel {
 
         // take the first piece of the Snake
         Rectangle r3 = this.body.get(0);
+
+        if(r3.getX() > 500 || r3.getY() > 500 || r3.getX() < 0 || r3.getY() < 0){
+            System.out.println("You lose!");
+            this.window.setVisible(false);
+
+            JFrame parent = new JFrame("Game over!");
+            JOptionPane.showMessageDialog(parent, "Your score: " + this.body.size());
+            //destroy this window
+            this.window.dispatchEvent(new WindowEvent(this.window, WindowEvent.WINDOW_CLOSING));
+            // exit app
+            System.exit(0);
+
+        }
+
         for (int i = 1; i < this.body.size(); i++) {
             Rectangle r2 = this.body.get(i);
             // if that piece hitting the tail/ or some body part of the Snake --> stop game

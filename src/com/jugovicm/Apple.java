@@ -18,8 +18,8 @@ public class Apple extends TimerTask {
         // dont change position until we eat apple
         // screen 500 x 500
         // generate number between 500 in x direction and 500 in y direction
-        this.x = 25 * new Random().nextInt(20);;
-        this.y = 25 * new Random().nextInt(20);;
+        this.x = 25 * new Random().nextInt(19);
+        this.y = 25 * new Random().nextInt(19);
     }
 
     public int getX() {
